@@ -1,0 +1,50 @@
+{
+  "name": "pathway-e2e",
+  "author": "Christoffer Artmann",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "module": "dist/pathway-e2e.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/pathway-e2e.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/pathway-e2e.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^8.2.6",
+    "husky": "^8.0.3",
+    "size-limit": "^8.2.6",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.6.1",
+    "typescript": "^5.1.6"
+  }
+}
